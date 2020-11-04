@@ -1,0 +1,18 @@
+ext {
+    appName = "主app"
+    plugin = [
+            Plugins.library,
+            Plugins.kotlin_android,
+            Plugins.kotlin_android_extensions,
+            Plugins.kotlin_kapt
+    ]
+    deps = [
+
+    ]
+    depProject = [ModelName.BaseCore]
+}
+configPluginApp project
+configAndroidDomain project
+configDependencies project
+configDepProject project
+

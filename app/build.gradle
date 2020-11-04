@@ -1,0 +1,16 @@
+ext {
+    appName = "主app"
+    plugin = [
+            Plugins.application,
+            Plugins.kotlin_android,
+            Plugins.kotlin_android_extensions,
+            Plugins.kotlin_kapt
+    ]
+    depProject = [ModelName.BaseLib]
+}
+configPluginApp project
+configAndroidDomain project
+configDepProject project
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+}

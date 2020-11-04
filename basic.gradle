@@ -1,0 +1,3 @@
+def logTest() {
+    println "==============日志输出sssssssss=============="
+}
