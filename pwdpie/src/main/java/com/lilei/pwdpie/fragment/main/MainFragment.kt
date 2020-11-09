@@ -73,11 +73,4 @@ class MainFragment : BaseVmFragment<FragmentMainBinding>() {
       return R.layout.fragment_main
     }
 
-
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-//        // TODO: Use the ViewModel
-//    }
-
 }

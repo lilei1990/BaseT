@@ -13,7 +13,7 @@ object Android {
     const val paging            = "androidx.paging:paging-runtime:2.1.2"
     const val viewpager2        = "androidx.viewpager2:viewpager2:1.1.0-alpha01"
     const val multidex          = "com.android.support:multidex:1.0.3"
-    const val material          = "com.google.android.material:material:1.3.0-alpha02"
+    const val material          = "com.google.android.material:material:1.3.0-alpha03"
 
     val lifecycle = Lifecycle
     object Lifecycle {
