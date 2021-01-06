@@ -3,16 +3,11 @@ package com.lilei.pwdpie.fragment.mine
 import android.os.Bundle
 import com.lei.base_core.base.BaseVmFragment
 import com.lilei.pwdpie.R
-import com.lilei.pwdpie.databinding.FragmentHomeBinding
-import com.lilei.pwdpie.databinding.FragmentMineBinding
-import com.scwang.smart.refresh.footer.BallPulseFooter
 import com.scwang.smart.refresh.footer.ClassicsFooter
-import com.scwang.smart.refresh.header.BezierRadarHeader
 import com.scwang.smart.refresh.header.ClassicsHeader
-import com.scwang.smart.refresh.layout.constant.SpinnerStyle
 import kotlinx.android.synthetic.main.fragment_mine.*
 
-class MineFragment : BaseVmFragment<FragmentHomeBinding>() {
+class MineFragment : BaseVmFragment() {
 
     companion object {
         fun newInstance() = MineFragment()

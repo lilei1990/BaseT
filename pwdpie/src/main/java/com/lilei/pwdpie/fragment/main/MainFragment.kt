@@ -9,15 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.lei.base_core.base.BaseVmFragment
-import com.lei.base_core.base.DataBindingConfig
 import com.lei.base_core.common.initFragment
 import com.lilei.pwdpie.R
-import com.lilei.pwdpie.databinding.FragmentMainBinding
 import com.lilei.pwdpie.fragment.home.HomeFragment
 import com.lilei.pwdpie.fragment.mine.MineFragment
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class MainFragment : BaseVmFragment<FragmentMainBinding>() {
+class MainFragment : BaseVmFragment() {
     private val fragmentList = arrayListOf<Fragment>()
     private val homeFragment by lazy { HomeFragment() }
     private val mineFragment by lazy { MineFragment() }

@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.blankj.utilcode.util.ThreadUtils
 import com.lei.base_core.common.CustomBindAdapter
 
 /**
@@ -31,6 +32,7 @@ class ArticleAdapter : PagingDataAdapter<Article, ArticleViewHolder>(POST_COMPAR
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         holder.tvName.text = getItem(position)?.title
         CustomBindAdapter.imgSrc(holder.ivico,R.mipmap.pwd_folders_app)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {

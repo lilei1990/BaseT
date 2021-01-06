@@ -6,32 +6,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.blankj.utilcode.util.LogUtils
 import com.lei.base_core.utils.ParamUtil
 
 /**
  * des mvvm 基础 fragment
  * @date 2020/5/9
- * @author zs
  */
-abstract class BaseVmFragment<T: ViewDataBinding> : Fragment() {
+abstract class BaseVmFragment : Fragment() {
 
     /**
      * 开放给外部使用
      */
     lateinit var mContext: Context
     lateinit var mActivity: AppCompatActivity
-    lateinit  var mBinding: T
     private var fragmentProvider: ViewModelProvider? = null
     private var activityProvider: ViewModelProvider? = null
-    private var dataBindingConfig: DataBindingConfig? = null
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -51,13 +48,8 @@ abstract class BaseVmFragment<T: ViewDataBinding> : Fragment() {
         setStatusColor()
         setSystemInvadeBlack()
         // 1、对布局需要绑定的内容进行加载
-        val binding =
-            DataBindingUtil.inflate<T>(inflater, getLayoutId(), container, false);
-        mBinding = binding
-
-        binding.lifecycleOwner = viewLifecycleOwner
-
-        return binding.root
+        //设置布局内容
+        return inflater.inflate(getLayoutId(), container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

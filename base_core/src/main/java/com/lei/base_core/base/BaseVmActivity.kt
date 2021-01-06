@@ -9,7 +9,6 @@ import com.lei.base_core.utils.StatusUtils
 /**
  * des mvvm 基础 activity
  * @date 2020/5/9
- * @author zs
  */
 abstract class BaseVmActivity : AppCompatActivity() {
 

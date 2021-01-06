@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
-    <data>
+    app:srlEnablePreviewInEditMode="true">
+    <!--srlAccentColor srlPrimaryColor 将会改变 Header 和 Footer 的主题颜色-->
+    <!--srlEnablePreviewInEditMode 可以开启和关闭预览功能-->
 
-        <variable
-            name="content"
-            type="String" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:text="sssssssssssssssss" />
 
-    </data>
-
-
-
-        <com.scwang.smart.refresh.layout.SmartRefreshLayout
-
-            android:id="@+id/refreshLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            app:srlEnablePreviewInEditMode="true">
-            <!--srlAccentColor srlPrimaryColor 将会改变 Header 和 Footer 的主题颜色-->
-            <!--srlEnablePreviewInEditMode 可以开启和关闭预览功能-->
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:text="sssssssssssssssss"/>
-
-        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
-</layout>
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>

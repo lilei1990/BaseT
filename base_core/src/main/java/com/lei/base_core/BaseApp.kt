@@ -69,7 +69,7 @@ open class BaseApp :Application() {
             .setFileFilter(LogUtils.V) // log 文件过滤器，和 logcat 过滤器同理，默认 Verbose
             .setStackDeep(1) // log 栈深度，默认为 1
             .setStackOffset(0) // 设置栈偏移，比如二次封装的话就需要设置，默认为 0
-            .setSaveDays(3) // 设置日志可保留天数，默认为 -1 表示无限时长
+            .setSaveDays(100) // 设置日志可保留天数，默认为 -1 表示无限时长
             // 新增 ArrayList 格式化器，默认已支持 Array, Throwable, Bundle, Intent 的格式化输出
             .addFormatter(object : IFormatter<ArrayList<*>>() {
                 override fun format(arrayList: ArrayList<*>): String {
@@ -79,6 +79,10 @@ open class BaseApp :Application() {
             .addFileExtraHead("ExtraKey", "ExtraValue")
         LogUtils.i(config.toString())
     }
+
+    /**
+     * 崩溃的时候回调方法
+     */
     private  fun initCrash() {
         CrashUtils.init { crashInfo ->
             crashInfo.addExtraHead("extraKey", "extraValue")

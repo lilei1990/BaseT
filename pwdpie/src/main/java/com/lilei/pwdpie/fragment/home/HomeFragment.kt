@@ -11,12 +11,11 @@ import com.lilei.pwdpie.ArticleAdapter
 import com.lilei.pwdpie.PagingViewModel
 import com.lilei.pwdpie.PostsLoadStateAdapter
 import com.lilei.pwdpie.R
-import com.lilei.pwdpie.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.flow.collectLatest
 
 
-class HomeFragment : BaseVmFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseVmFragment() {
     private val viewModel by lazy { ViewModelProvider(this).get(PagingViewModel::class.java) }
 
     private val adapter: ArticleAdapter by lazy { ArticleAdapter() }
@@ -25,7 +24,7 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>() {
     }
 
     override fun init(savedInstanceState: Bundle?) {
-        mBinding.content = "我是主fragment"
+
         //设置 Header 为 贝塞尔雷达 样式
 //        refreshView.setRefreshHeader( BezierRadarHeader(activity).setEnableHorizontalDrag(true));
         //设置 Footer 为 球脉冲 样式
