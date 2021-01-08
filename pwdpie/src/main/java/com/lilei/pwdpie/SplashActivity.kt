@@ -1,17 +1,16 @@
 package com.lilei.pwdpie
 
 import android.Manifest
-import android.content.Intent
 import android.os.Bundle
+import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.PermissionUtils.SimpleCallback
 import com.lei.base_core.base.BaseVmActivity
 import com.lei.base_core.helper.PermissionHelper
 import com.lei.base_core.utils.PrefUtils
 import com.lei.base_core.utils.StatusUtils
 import com.lilei.pwdpie.constants.Constants
-import io.reactivex.Observable
-import io.reactivex.disposables.Disposable
-import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 
 
 /**
@@ -20,7 +19,6 @@ import java.util.concurrent.TimeUnit
  */
 class SplashActivity : BaseVmActivity() {
 
-    private var disposable: Disposable? = null
     private val tips = "现在要向您申请存储权限，用于访问您的本地音乐，您也可以在设置中手动开启或者取消。"
     private val perms = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
@@ -45,17 +43,12 @@ class SplashActivity : BaseVmActivity() {
      * 开始倒计时跳转
      */
     private fun startIntent() {
+        async {
+            delay(2000)
+            ActivityUtils.startActivity(MainActivity::class.java)
+            finish()
+        }
 
-        disposable = Observable.timer(2000, TimeUnit.MILLISECONDS)
-            .subscribe {
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-            }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        disposable?.dispose()
     }
 
 

@@ -1,16 +1,19 @@
 package com.lei.base_core.base
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.lei.base_core.utils.ColorUtils
 import com.lei.base_core.utils.StatusUtils
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.MainScope
 
 /**
  * des mvvm 基础 activity
  * @date 2020/5/9
  */
-abstract class BaseVmActivity : AppCompatActivity() {
+abstract class BaseVmActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
     private var mActivityProvider: ViewModelProvider? = null
     override fun onCreate(savedInstanceState: Bundle?) {
