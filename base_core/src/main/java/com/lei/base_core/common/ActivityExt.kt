@@ -1,6 +1,8 @@
 package com.lei.base_core.common
 
 import android.app.Activity
+import android.view.LayoutInflater
+import androidx.viewbinding.ViewBinding
 import com.blankj.utilcode.util.SnackbarUtils
 
 /**
@@ -52,4 +54,9 @@ fun Activity.showErrorToast(message: String) {
     SnackbarUtils.with(findViewById(android.R.id.content))
         .setMessage(message)
         .showError(false)
+}
+
+
+fun <VB : ViewBinding> Activity.binding(inflate: (LayoutInflater) -> VB) = lazy {
+    inflate(layoutInflater).apply { setContentView(root) }
 }

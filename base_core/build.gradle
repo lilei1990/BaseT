@@ -42,8 +42,7 @@ ext {
             ThirdParty.smart.head,
             ThirdParty.utils.blankj_utilcode,
     ]
+    depProject=[]
 }
-configPluginApp project
-configAndroidDomain project
-configDependencies project
+applyPluginLib project
 

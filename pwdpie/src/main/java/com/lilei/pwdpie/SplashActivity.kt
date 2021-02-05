@@ -5,10 +5,13 @@ import android.os.Bundle
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.PermissionUtils.SimpleCallback
 import com.lei.base_core.base.BaseVmActivity
+import com.lei.base_core.common.binding
 import com.lei.base_core.helper.PermissionHelper
 import com.lei.base_core.utils.PrefUtils
 import com.lei.base_core.utils.StatusUtils
 import com.lilei.pwdpie.constants.Constants
+import com.lilei.pwdpie.databinding.ActivityMainBinding
+import com.lilei.pwdpie.databinding.ActivitySplashBinding
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 
@@ -18,7 +21,7 @@ import kotlinx.coroutines.delay
  * 权限：https://www.cnblogs.com/blosaa/p/9584348.html
  */
 class SplashActivity : BaseVmActivity() {
-
+    private val binding by binding(ActivityMainBinding::inflate)
     private val tips = "现在要向您申请存储权限，用于访问您的本地音乐，您也可以在设置中手动开启或者取消。"
     private val perms = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
@@ -50,9 +53,6 @@ class SplashActivity : BaseVmActivity() {
         }
 
     }
-
-
-    override fun getLayoutId() = R.layout.activity_splash
 
 
     /**

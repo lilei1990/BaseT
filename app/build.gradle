@@ -1,16 +1,14 @@
 ext {
-    appName = "主app"
-    plugin = [
-            Plugins.application,
-            Plugins.kotlin_android,
-            Plugins.kotlin_android_extensions,
-            Plugins.kotlin_kapt
-    ]
+    appName = "主app333"
+
     depProject = [ModelName.BaseLib]
 }
-configPluginApp project
-configAndroidDomain project
-configDepProject project
-dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+
+
+
+//根据模式配置插件
+if (!isModule.toBoolean()) {
+    applyPluginApp project
+} else {
+    applyPluginLib project
 }

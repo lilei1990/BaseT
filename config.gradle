@@ -1,4 +1,3 @@
-import sun.rmi.runtime.Log
 
 ext {
     //app配置
@@ -58,7 +57,9 @@ def configAppAndroidDomain(Project pro) {
         lintOptions {
             abortOnError false
         }
-
+        viewBinding {
+            enabled = true
+        }
 //        buildFeatures {
 //            dataBinding = true
 //        }

@@ -13,12 +13,12 @@ import kotlinx.coroutines.MainScope
  * des mvvm 基础 activity
  * @date 2020/5/9
  */
-abstract class BaseVmActivity : AppCompatActivity(), CoroutineScope by MainScope() {
+abstract class BaseVmActivity : AppCompatActivity(),
+    CoroutineScope by MainScope() {
 
     private var mActivityProvider: ViewModelProvider? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getLayoutId()?.let { setContentView(it) }
         setStatusColor()
         setSystemInvadeBlack()
         initViewModel()
@@ -72,8 +72,5 @@ abstract class BaseVmActivity : AppCompatActivity(), CoroutineScope by MainScope
      */
     abstract fun init(savedInstanceState: Bundle?)
 
-    /**
-     * 获取layout布局
-     */
-    abstract fun getLayoutId(): Int?
+
 }
